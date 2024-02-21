@@ -1,0 +1,298 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Proxima Nova thin', sans-serif;
+  font-weight: lighter;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  /* overflow: hidden; */
+}
+
+.main {
+  display: flex;
+  height: 100vh;
+}
+
+:root {
+  --transition_speed: 0.3s;
+  --input_border: 2px rgb(91, 80, 255) solid;
+  --button_border: 1px rgb(91, 80, 255) solid;
+  --border_raidus: 4px;
+}
+/* ----------------------sidebar--------------------------- */
+
+.side-bar {
+  padding-top: 5vh;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  flex-direction: row;
+  padding-left: 3vh;
+  height: 80vh;
+  width: 18vw;
+}
+
+.side-bar-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  gap: 1.5vh;
+  padding-top: 2vh;
+  
+  border-radius: var(--border_raidus);
+  width: 13%;
+  height: 27vh;
+  background-color: rgb(94, 124, 255); 
+   position: fixed;
+
+}
+
+.side-bar-buttons .text a {
+  width: 0vw;
+  height: 0vh;
+  font-size: 18px;
+  color: black;
+  transition: var(--transition_speed);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.side-bar-button .text {
+  color: black;
+  cursor: pointer;
+}
+
+.side-bar .text a:hover {
+  color: white;
+}
+
+/* -----------------------Teachers page------------------------ */
+
+.main-teachers {
+  display: flex;
+  
+  justify-content: center;
+  padding-top: 15vh;
+  width: 100%;
+  height: 100vh;
+}
+
+.content-teachers{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.inputs-teachers-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 6.8vh;
+}
+
+.input-teachers  {
+  display: flex;
+  width: 12.4vw;
+  color: rgba(0, 0, 0, 0.5);
+  height: 5.5vh;
+  border: var(--input_border);
+  border-radius: var(--border_raidus);
+  padding-left: 1vw;
+  justify-content: space-between;
+  outline: none;
+  transition: var(--transition_speed);
+}
+
+.input-teachers:focus {
+  background-color: rgb(224, 224, 224);
+  border: none;
+  width: 12.9vw;
+  height: 6vh;
+  color: black;
+}
+
+
+.buttons-teachers {
+  display: grid;
+  gap: 0.5vh;
+}
+
+.buttons-teachers button {
+  height: 6vh;
+  width: 41.7vw;
+  cursor: pointer;
+  background: none;
+  border-radius: var(--border_raidus);
+  border: var(--button_border);
+  transition: var(--transition_speed);
+}
+
+.buttons-teachers button:hover {
+  background-color: rgb(91, 80, 255);
+  width: 41.8vw;
+  height: 6.2vh;
+}
+
+.buttons-teachers .search-buttons {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  width: 41.7vw;
+  gap: 0.3vw;
+  padding-bottom: 2vh;
+}
+
+.buttons-teachers .search-buttons button {
+  /* width: 1vw; */
+}
+
+.tables-teachers {
+  width: 100%;
+}
+.tables-teachers table {
+  width: 100%;
+  border: var(--button_border);
+  
+}
+
+.tables-teachers th {
+  padding: 0 4vh 0 4vh;
+  font-size: 14px;
+  border-left: var(--button_border);
+  font-family: 'Proxima Nova Thin', sans-serif ;
+  font-weight: lighter;
+
+}
+ 
+.tables-teachers .th-Number{
+  border-left: none;
+  padding: 0 1vh 0 1vh;
+}
+
+.tables-teachers td{
+  display: none;
+  text-align: center;
+  border: var(--button_border);
+  height: 5vh;
+}
+
+.tables-teachers .td-Delete-and-Edit button{
+  height: 4vh;
+  width: 6.1vw;
+  cursor: pointer;
+  background: none;
+  border-radius: 3px;
+  border:none;
+  background-color: rgb(91, 80, 255);
+
+  transition: var(--transition_speed);
+}
+
+.tables-teachers .td-Delete-and-Edit button:hover {
+  background-color: rgb(91, 80, 255);
+  width:6.5vw;
+  height: 4.1vh;
+}
+/* ----------------students----------- */
+.students-main{
+  padding-top: 15vh;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+}
+.students-content{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+  align-items: center;
+}
+.students-inputs{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.students-inputs input{
+  border: var(--input_border);
+  border-radius: var(--border_raidus);
+  height: 5.5vh;
+  width: 12.4vw;
+  padding-left: 1vw;
+  transition: var(--transition_speed);
+}
+
+.students-inputs input:focus{
+  border: none;
+  outline: none;
+  width: 12.6vw;
+  height: 5.7vh;
+  background-color: rgb(224, 224, 224);
+}
+
+.students-inputs input[type="date"]{
+  color: rgba(0, 0, 0, 0.5);
+  
+}
+
+.students-inputs input[type="date"]:focus{
+  color: rgb(0, 0, 0);
+}
+.students-buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5vh;
+  
+}
+
+.students-buttons button{
+  background: none;
+  border: var(--button_border);
+  width: 13vw;
+  height: 6.2vh;
+  border-radius: var(--border_raidus);
+  transition: var(--transition_speed);
+  cursor: pointer;
+}
+
+.students-buttons span button{
+  width: 41vw;
+}
+.students-buttons .search-buttons{
+  display: flex;
+  justify-content: center;
+  gap: 0.6vh;
+  
+}
+.students-buttons input{
+  border: var(--input_border);
+  border-radius: var(--border_raidus);
+  height: 6.2vh;
+  width: 14.3vw;
+  padding-left: 1vw;
+  transition: var(--transition_speed);
+}
+
+.students-buttons button:hover{
+  width: 13.3vw;
+  height: 6.3vh;
+  background-color: rgb(91, 80, 255) ;
+}
+
+.students-buttons span button:hover{
+  height: 6.3vh;
+  width: 41.2vw;
+}
+
+.students-buttons input:focus{
+  outline: none;
+  border: none;
+  background-color: rgb(224,224,224);
+  width: 14.5vw;
+  height: 6.3vh;
+}
