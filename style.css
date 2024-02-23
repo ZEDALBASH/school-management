@@ -221,7 +221,7 @@ body {
   border: var(--input_border);
   border-radius: var(--border_raidus);
   height: 5.5vh;
-  width: 12.4vw;
+  width: 10vw;
   padding-left: 1vw;
   transition: var(--transition_speed);
 }
@@ -229,7 +229,7 @@ body {
 .students-inputs input:focus{
   border: none;
   outline: none;
-  width: 12.6vw;
+  width: 10.6vw;
   height: 5.7vh;
   background-color: rgb(224, 224, 224);
 }
@@ -253,7 +253,7 @@ body {
 .students-buttons button{
   background: none;
   border: var(--button_border);
-  width: 13vw;
+  width: 14.1vw;
   height: 6.2vh;
   border-radius: var(--border_raidus);
   transition: var(--transition_speed);
@@ -261,7 +261,7 @@ body {
 }
 
 .students-buttons span button{
-  width: 41vw;
+  width: 43.1vw;
 }
 .students-buttons .search-buttons{
   display: flex;
@@ -279,14 +279,14 @@ body {
 }
 
 .students-buttons button:hover{
-  width: 13.3vw;
+  width: 14.3vw;
   height: 6.3vh;
   background-color: rgb(91, 80, 255) ;
 }
 
 .students-buttons span button:hover{
   height: 6.3vh;
-  width: 41.2vw;
+  width: 43.2vw;
 }
 
 .students-buttons input:focus{
@@ -295,4 +295,20 @@ body {
   background-color: rgb(224,224,224);
   width: 14.5vw;
   height: 6.3vh;
+}
+
+.students-tables table{
+  border: var(--button_border);
+  width: 43vw;
+}
+
+.students-tables th{
+  
+  border-left:var(--button_border);
+  padding: 0 1vw 0 1vw; 
+
+}
+
+.students-tables .th-Num{
+  border-left: none;
 }
