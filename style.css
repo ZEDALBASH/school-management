@@ -42,10 +42,9 @@ body {
   align-items: center;
   gap: 1.5vh;
   padding-top: 2vh;
-  
   border-radius: var(--border_raidus);
   width: 13%;
-  height: 27vh;
+  height: 33vh;
   background-color: rgb(94, 124, 255); 
    position: fixed;
 
@@ -203,12 +202,14 @@ body {
   display: flex;
   width: 100%;
   height: 100vh;
+  padding-left:13vw ;
   justify-content: center;
 }
 .students-content{
   display: flex;
   flex-direction: column;
   gap: 1.5vh;
+  padding-right: 3vw;
   align-items: center;
 }
 .students-inputs{
@@ -296,7 +297,9 @@ body {
   width: 14.5vw;
   height: 6.3vh;
 }
-
+.students-tables{
+  display: flex;
+}
 .students-tables table{
   border: var(--button_border);
   width: 43vw;
@@ -312,3 +315,185 @@ body {
 .students-tables .th-Num{
   border-left: none;
 }
+
+.students-pfp{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  height: 40vh;
+  width: 20vw;
+  border: var(--button_border);
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+.students-pfp img{
+  width: 20%;
+  height: 20%;
+  cursor: pointer;
+}
+
+
+
+/* ---------------------Subjects page-------------------- */
+
+.subject-main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top:13vh ;
+}
+
+.subject-content{
+  display: flex;
+  flex-direction: column;
+  align-items:center;  
+  gap: 1.5vh;
+}
+.subject-input{
+  display: flex;
+  justify-content: space-between  ;
+  width: 100%;
+}
+.subject-input input{
+  border: var(--input_border);
+  border-radius: var(--border_raidus);
+  width: 20vw;
+  height: 5.5vh;
+  outline: none;
+  transition: var(--transition_speed);
+  padding: 1vw;
+}
+.subject-input input:focus{
+  border: none;
+  background-color: rgb(224, 224, 224);
+  width: 20.2vw;
+  height: 5.6vh;
+}
+
+.subject-input select{
+  border: var(--input_border);
+  border-radius: var(--border_raidus);
+  background-color:white;
+  outline: none;
+  width: 20vw;
+  height: 5.5vh;
+  transition: var(--transition_speed);
+}
+
+.subject-input select:invalid{
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.subject-input select option{
+  color: rgb(0, 0, 0);
+  
+}
+.subject-input select:focus{
+  width: 20.2vw;
+  height: 5.6vh;
+  border: none;
+  background-color: rgb(224, 224, 224);
+}
+.subject-buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5vh;
+}
+.subject-buttons button{
+  border: var(--button_border);
+  transition: var(--transition_speed);
+  border-radius: var(--border_raidus);
+  height: 5.5vh;
+  width: 14vw;
+  background-color: white;
+  cursor: pointer;
+
+}
+
+.subject-buttons button:hover{
+  width: 14.2vw;
+  height: 5.6vh;
+  background-color: rgb(91, 80, 255);
+}
+
+.subject-buttons span button{
+  width: 43vw;
+
+}
+
+.subject-buttons span button:hover{
+  background-color:rgb(91, 80, 255);
+  height: 5.6;
+  width: 43.1vw;
+}
+
+.subject-buttons input{
+  border: var(--input_border);
+  height: 5.5vh;
+  border-radius: var(--border_raidus);
+  outline: none;
+  padding-left: 1vw;
+}
+
+
+.subject-table{
+  /* border: var(--button_border); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subject-table table{
+  border: var(--button_border)  ;
+}
+
+.subject-table tr th , .subject-table tr td{
+  padding:0 5.35vw 0 5.36vw;
+  border-left:var(--button_border);
+  /* border-bottom: var(--button_border); */
+
+}
+
+.subject-table tr{
+  
+}
+
+.subject-table .th-Num{
+  border-left:none;  
+}
+
+.subject-table .td-Num{
+  border-left: none;
+}
+
+.subject-table tr td{
+  padding-left: 0;
+}
+.subject-table tr td{
+  
+  border-top:var(--button_border);
+  padding: 1vh;
+  
+  
+}
+
+.subject-table tr .td-Num{
+  padding-left: 5.8vw;
+}
+
+.subject-table tr .td-Name{
+  padding-left: 5.5vw;
+} 
+
+.subject-table tr .td-Teacher{
+  padding-left: 6.3vw;
+}
+
+/* ---------------------classes-------------------- */
+
+.classes-main
