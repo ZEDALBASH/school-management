@@ -96,7 +96,7 @@ body {
 .input-teachers  {
   display: flex;
   width: 12.4vw;
-  color: rgba(0, 0, 0, 0.5);
+  
   height: 5.5vh;
   border: var(--input_border);
   border-radius: var(--border_raidus);
@@ -112,6 +112,9 @@ body {
   width: 12.9vw;
   height: 6vh;
   color: black;
+}
+input[type="date"]{
+  color: rgba(0, 0, 0, 0.5);
 }
 
 
@@ -149,36 +152,34 @@ body {
   /* width: 1vw; */
 }
 
-.tables-teachers {
-  width: 100%;
-}
-.tables-teachers table {
-  width: 100%;
+.tables-teachers table{
   border: var(--button_border);
-  
+  width: 41.6vw;
 }
 
-.tables-teachers th {
-  padding: 0 4vh 0 4vh;
-  font-size: 14px;
+.tables-teachers table tr .th-border{
   border-left: var(--button_border);
-  font-family: 'Proxima Nova Thin', sans-serif ;
-  font-weight: lighter;
-
-}
- 
-.tables-teachers .th-Number{
-  border-left: none;
-  padding: 0 1vh 0 1vh;
 }
 
-.tables-teachers td{
-  display: none;
+.tables-teachers table tr .th-Num{
+  /* border-left: none; */
+  width: 4vw;
+}
+
+.tables-teachers table tr td{
   text-align: center;
-  border: var(--button_border);
-  height: 5vh;
+  /* border-left: var(--button_border); */
+  border-top: var(--button_border);
 }
 
+.tables-teachers table tr .td-border{
+  border-left: var(--button_border);
+}
+
+.tables-teachers table tr .td-Num{
+  width: 4vw;
+  border-left: none;
+}
 .tables-teachers .td-Delete-and-Edit button{
   height: 4vh;
   width: 6.1vw;
@@ -442,25 +443,20 @@ body {
 
 
 .subject-table{
-  /* border: var(--button_border); */
+  /* border: var(--button_border); 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;  */
+  
 }
 
 .subject-table table{
   border: var(--button_border)  ;
+  width: 43vw;
 }
 
 .subject-table tr th , .subject-table tr td{
-  padding:0 5.35vw 0 5.36vw;
   border-left:var(--button_border);
-  /* border-bottom: var(--button_border); */
-
-}
-
-.subject-table tr{
-  
 }
 
 .subject-table .th-Num{
@@ -477,23 +473,252 @@ body {
 .subject-table tr td{
   
   border-top:var(--button_border);
-  padding: 1vh;
+  height: 4vh;
   
   
 }
 
-.subject-table tr .td-Num{
-  padding-left: 5.8vw;
+.subject-table tr td{
+  text-align: center;
 }
 
-.subject-table tr .td-Name{
-  padding-left: 5.5vw;
-} 
-
-.subject-table tr .td-Teacher{
-  padding-left: 6.3vw;
-}
 
 /* ---------------------classes-------------------- */
 
-.classes-main
+.classes-main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 13vh;
+}
+
+
+.classes-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5vh;
+}
+
+.classes-inputs input{
+  border: var(--input_border);
+  border-radius: var(--border_raidus);
+  outline: none;
+  width: 16vw;
+  height: 6vh;
+  padding-left: 1vw;
+  transition: var(--transition_speed);
+}
+
+.classes-inputs input:focus{
+  border: none ;
+  background-color: rgb(224, 224, 224) ;
+  width: 16.3vw ;
+  height: 6.1vh;
+}
+
+.classes-buttons{
+  display: flex;
+  flex-direction:column ;
+  gap: 1vh;
+}
+.classes-buttons button{
+  border: var(--button_border);
+  border-radius: var(--border_raidus);
+  background-color: white;
+  width: 10.1vw;
+  height: 6.6vh;
+  transition: var(--transition_speed);
+  cursor: pointer;
+}
+.classes-buttons span button{
+  width: 35vw;
+  height:5.6vh ;
+  background-color: white;
+  border: var(--button_border);
+  border-radius: var(--border_raidus);
+  transition: var(--transition_speed);
+}
+
+.classes-buttons input{
+  border: var(--input_border);
+  height: 6.4vh;
+  width: 14.1vw;
+  border-radius: var(--border_raidus);
+  padding-left: 1vw;
+  transition: var(--transition_speed);
+  outline: none;
+}
+
+.classes-buttons input:focus{
+  width: 14.3vw ;
+  height: 6.6vh;
+  background-color: rgb(224, 224, 224);
+  border: none;
+}
+
+.classes-buttons .search-button button:hover{
+  width: 10.3vw;
+  height: 6.7vh;
+  background-color: rgb(91, 80, 255);
+}
+
+.classes-buttons span button:hover{
+  width: 35.1vw;
+  height: 5.8vh;
+  background-color: rgb(91, 80, 255) ;
+}
+
+.classes-tables table{
+  border: var(--button_border) ;
+  width: 35vw;
+  /* padding-right: 6vw; */
+}
+
+.classes-tables tr .th-Number{
+  border-right:var(--button_border) ;
+  width:10vw;
+}
+
+.classes-tables tr td{
+  border-top: var(--button_border);
+  text-align: center;
+}
+
+.classes-tables tr .td-Number{
+  border-right: var(--button_border ) ;
+}
+
+
+/* -------------------marks page------------------- */
+
+.marks-main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 13vh;
+}
+
+.marks-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vw;
+  gap: 1.5vh;
+}
+
+.marks-inputs{
+  display: flex;
+  justify-content: space-between;
+  width: 43vw;
+}
+
+.marks-inputs input{
+  border: var(--input_border);
+  border-radius: var(--border_raidus);
+  width: 13vw;
+  height: 6.5vh;
+  padding-left: 1vw;
+  outline: none;
+  transition: var(--transition_speed);
+}
+
+.marks-inputs select{
+  background-color: white;
+  width: 13vw;
+  border: var(--input_border);
+  border-radius: var(--border_raidus);
+  outline: none;
+  transition: var(--transition_speed);
+}
+
+.marks-inputs select:invalid{
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.marks-inputs select option{
+  color: rgb(0, 0, 0);
+}
+.marks-inputs input:focus ,.marks-inputs select:focus{
+  width: 13.4vw;
+  height: 6.7vh;
+  background-color: rgb(224, 224, 224);
+  border: none;
+}
+
+
+.marks-buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vw;
+  gap: 0.5vh;
+}
+
+.marks-buttons button{
+  border: var(--button_border);
+  border-radius: var(--border_raidus) ;
+  background-color: white;
+  width: 14.1vw;
+  height: 6.5vh;
+  cursor: pointer;
+  transition: var(--transition_speed) ;
+
+}
+
+.marks-buttons span button{
+  width: 43vw;
+}
+
+.marks-buttons input{
+  height: 6.5vh;
+  width: 14vw;
+  border: var(--input_border);
+  border-radius: var(--border_raidus);
+  padding: 1vw;
+  outline: none;
+  transition: var(--transition_speed);
+}
+
+.marks-buttons button:hover{
+  width: 14.2vw;
+  height: 6.6vh;
+  background-color: rgb(91, 80, 255);
+}
+
+.marks-buttons span button:hover{
+  width: 43.2vw;
+}
+
+.marks-buttons input:focus{
+  width: 14.2vw;
+  height: 6.6vh;
+  border: none;
+  background-color: rgb(224, 224, 224);
+}
+
+.marks-tables table{
+  border: var(--button_border);
+  width: 43vw;
+}
+
+.marks-tables table tr th{
+  border-left: var(--button_border);
+}
+
+.marks-tables table tr .th-Num{
+  border-left: none;
+  width: 7vw;
+}
+
+.marks-tables table tr td{
+  text-align: center;
+  border-left: var(--button_border);
+  border-top: var(--button_border);
+}
+
+.marks-tables table tr .td-Num{
+  border-left: none;
+}

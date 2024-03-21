@@ -21,39 +21,45 @@
 
       <div class="main-teachers">
         <div class="content-teachers">
+          <form action=""></form>
           <div class="inputs-teachers-container">
-            <input type="text" class="input-teachers" placeholder="Name">
-            <input type="date" class="input-teachers" placeholder="Birthdate" >
-            <input type="text" class="input-teachers" placeholder="Address">
+            
+            <input type="text" class="input-teachers" id="nameInputTeachers" placeholder="Name">
+            <input type="date" class="input-teachers" id="birthdateInputTeachers" placeholder="Birthdate" >
+            <input type="text" class="input-teachers" id="addressInputTeachers" placeholder="Address">
+            
           </div>
           <div class="buttons-teachers">
-          <button>Add</button>
+          <button id="submitTeachers">Add</button>
           <div class="search-buttons">
-            <button>Search by the name</button>
+
+            <button onclick="getSearchMode(this.id)" id="searchNameBtnTeachers">Search by the name</button>
               <span>
-                <input type="text" class="input-teachers" placeholder="Search">
+                <input onkeyup="search(this.value)" type="text" class="input-teachers" id="searchInputTeachers" placeholder="Search">
               </span>
-              <button>Search by the number</button>
+              <button onclick="getSearchMode(this.id)" id="searchNumBtnTeachers">Search by the number</button>
             </div>
           </div>
 
           <div class="tables-teachers">
-            <table>
+            <table id="">
               <tr class="th-tr">
-                
-                <th class="th-Number">Num</th>
+                <th class="th-Num">Num</th>
+                <th class="th-border"></th>
                 <th class="th-Name">Name</th>
+                <th class="th-border"></th>
                 <th class="th-Birthdate">Birthdate</th>
+                <th class="th-border"></th>
                 <th class="th-Address">Address</th>
+                <th class="th-border"></th>
                 <th class="th-Delete and Edit">Delete and Edit</th>
               </tr>
-              <tr>
-                <td class="td-Number">19</td>
-                <td class="td-Name"></td>
-                <td class="td-Birthdate"></td>
-                <td class="td-Address"></td>
-                <td class="td-Delete-and-Edit"><button>Delete</button> <button>Edit</button></td>
-              </tr>
+              
+              <tbody id="tbody">
+
+                
+                
+              </tbody>
             </table>
           </div>
           
@@ -61,6 +67,6 @@
      </div>
       </div>
     </div>
-    <script src="main.js"></script>
+    <script src="mainTeachers.js"></script>
   </body>
 </html>
