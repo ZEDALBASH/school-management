@@ -96,15 +96,103 @@ body {
   height: 12.1vh;
   
 }
+.inputs-sub-alt{
+  display: flex;
+  justify-content: space-between  ;
+  flex-direction: column;
+  width: 100%;
+  gap: 1vh;
+}
 .create-edit-inputs{
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  /* flex-direction: row; */
   width: 100%;
+}
+
+.create-edit-inputs-sub-alt{
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: row; */
+  width: 100%;
+  
+}
+.create-edit-inputs-sub-alt input{
+  border: var(--input_border);
+  border-radius: var(--border_raidus);
+  width: 18vw;
+  height: 5.5vh;
+  outline: none;
+  transition: var(--transition_speed);
+  padding: 1vw;
+}
+.create-edit-inputs-sub-alt input:focus{
+  border: none;
+  background-color: rgb(224, 224, 224);
+  width: 20.2vw;
+  height: 5.6vh;
+}
+
+.create-edit-inputs-sub-alt select{
+  border: var(--input_border);
+  border-radius: var(--border_raidus);
+  background-color:white;
+  outline: none;
+  width: 18vw;
+  height: 5.5vh;
+  transition: var(--transition_speed);
+}
+
+.create-edit-inputs-sub-alt select:invalid{
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.create-edit-inputs-sub-alt select option{
+  color: rgb(0, 0, 0);
+  
+}
+.create-edit-inputs-sub-alt select:focus{
+  width: 20.2vw;
+  height: 5.6vh;
+  border: none;
+  background-color: rgb(224, 224, 224);
 }
 .Add-button{
   display: flex;
 }
+
+.create-edit-inputs-alt {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.create-edit-inputs-alt input{
+  border: var(--input_border);
+  border-radius: var(--border_raidus);
+  height: 5.5vh;
+  width: 10vw;
+  padding-left: 1vw;
+  transition: var(--transition_speed);
+}
+
+.create-edit-inputs-alt input:focus{
+  border: none;
+  outline: none;
+  width: 10.6vw;
+  height: 5.7vh;
+  background-color: rgb(224, 224, 224);
+}
+
+.create-edit-inputs-alt input[type="date"]{
+  color: rgba(0, 0, 0, 0.5);
+  
+}
+
+.create-edit-inputs-alt input[type="date"]:focus{
+  color: rgb(0, 0, 0);
+}
+
 .Add-button button{
   height: 6vh;
   width: 41.7vw;
@@ -113,6 +201,12 @@ body {
   border-radius: var(--border_raidus);
   border: var(--button_border);
   transition: var(--transition_speed);
+}
+
+.Add-button button:hover{
+  width: 42vw;
+  height: 6.3vh;
+  background-color: rgb(91, 80, 255) ;
 }
 
 input  {
@@ -158,7 +252,7 @@ input[type="date"]{
 
 .buttons button:hover {
   background-color: rgb(91, 80, 255);
-  width: 41.8vw;
+  width: 42.5vw;
   height: 6.2vh;
 }
 
@@ -170,6 +264,7 @@ input[type="date"]{
   gap: 0.3vw;
   padding-bottom: 2vh;
 }
+
 
 .buttons .search-buttons button {
   /* width: 1vw; */
@@ -255,12 +350,7 @@ input[type="date"]{
   padding-right: 3vw;
   align-items: center;
 }
-.students-inputs{
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  
-}
+
 .students-inputs input{
   border: var(--input_border);
   border-radius: var(--border_raidus);
