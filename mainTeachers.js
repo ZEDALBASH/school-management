@@ -113,11 +113,7 @@ function datePlaceholder() {
   }
 }
 
-birthdate.onblur = datePlaceholder;
-birthdate.onfocus = function () {
-  birthdate.style.color = "rgb(0,0,0) ";
-};
-
+birthdat
 let searchMode = "name";
 function getSearchMode(id) {
   if (id == "searchNameBtnTeachers") {

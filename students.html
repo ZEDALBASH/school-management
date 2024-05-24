@@ -22,13 +22,13 @@
           <div class="content-page">
             <div class="inputs">
               <div class="create-edit-inputs-alt">
-              <input type="text" placeholder="Name">
-              <input type="date">
-              <input type="text" placeholder="Class">
-              <input type="text" placeholder="Address">
+              <input id="Name" type="text" placeholder="Name">
+              <input id="Birthdate" type="date">
+              <input id="class" type="text" placeholder="Class">
+              <input id="Address" type="text" placeholder="Address">
             </div>
               <div class="Add-button">
-              <button>Add</button>
+              <button id="submit">Add</button>
               </div>
             </div>
             <div class="buttons">
@@ -44,21 +44,19 @@
               <table>
                 <tr>
                   <th class="th-Num">Num</th>
+                  <th class="th-border"></th>
                   <th class="th-Name">Name</th>
+                  <th class="th-border"></th>
                   <th class="th-Birthdate">Birthdate</th>
-                  <th class="th-Address">Address</th>
+                  <th class="th-border"></th>
                   <th class="th-Class">Class</th>
+                  <th class="th-border"></th>
+                  <th class="th-Address">Address</th>                  
+                  <th class="th-border"></th>
                   <th class="th-Del-Edit">Delete and Edit</th>
                 </tr>
-                <tr>
-                  <td class="td-Num"></td>
-                  <td class="td-Name"></td>
-                  <td class="td-Birthdate"></td>
-                  <td class="td-Adress"></td>
-                  <td class="td-Class"></td>
-                  <td class="td-del-edit"></td>
-                </tr>
-              </table>
+                <tbody id="tbody"></tbody>
+              </table> 
             </div>
           </div>
           <div class="students-pfp">
@@ -67,6 +65,6 @@
           </div> 
         </div>
       </div>
-    <script src="main.js"></script>
+    <script src="mainStudents.js"></script>
   </body>
 </html>
