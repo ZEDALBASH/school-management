@@ -12,20 +12,36 @@ if (localStorage.results != null){
 else {
     dataArry = [];
 }
+var num = (function() {
+    const results = localStorage.getItem("resluts");
 
+    try {
+    let parseResults = JSON.parse(results);
+
+    if ((!Array.isArray(parseResults), parseResults != null)) {
+        throw new Error("is not array")
+    }
+    return Math.max(...parseResults.map((item) => item.Num));
+}
+catch (err) {
+    console.log(err);
+    return 0;
+}})();
 var arryIndex;
 
 submit.onclick = function(){
 if (Name.value != "", birthdate != "", Class != "", address != ""){
     let result = {
-        //  Num:num,
+        Num:num,
         name: Name.value,
         Birthdate: birthdate.value,
         oClass: Class.value,
         Address: address.value,
     };
     if (mode == "create"){
-    dataArry.push(result);
+        result.Num += 1;
+        num++;
+        dataArry.push(result);
     }
     else if(mode == "edit"){
         dataArry[arryIndex] = result;
@@ -67,7 +83,7 @@ function readData(){
     for (let i = 0; i < dataArry.length; i++){
         table += `
         <tr>
-                <td class="td-Num">1</td>
+                <td class="td-Num">${dataArry[i].Num}</td>
                 <td class="td-border"></td>
                 <td class="td-Name">${dataArry[i].name}</td>
                 <td class="td-border"></td>
@@ -105,3 +121,48 @@ function update(i){
     behavior: "smooth",
     });
 };
+
+var searchMode = "name";
+
+function search(value){
+    let table = "";
+    for (let i = 0; i < dataArry.length; i++){
+        if (searchMode == "name"){
+            if(dataArry[i].name.includes(value)){
+                table += `<tr>
+                <td class="td-Num">${dataArry[i].Num}</td>
+                <td class="td-border"></td>
+                <td class="td-Name">${dataArry[i].name}</td>
+                <td class="td-border"></td>
+                <td class="td-Birthdate">${dataArry[i].Birthdate}</td>
+                <td class="td-border"></td>
+                <td class="td-Class">${dataArry[i].oClass}</td>
+                <td class="td-border"></td>
+                <td class="td-Address">${dataArry[i].Address}</td>
+                <td class="td-border"></td>
+                <td class="td-Delete-and-Edit"><button onclick="deleteData(${i})">Delete</button> <button onclick="update(${i})">Edit</button></td>
+        </tr>`
+            }
+        }
+        else if (searchMode == "number"){
+            if(dataArry[i].Num.toString().includes(value)){
+                table +=
+                `<tr>
+                <td class="td-Num">${dataArry[i].Num}</td>
+                <td class="td-border"></td>
+                <td class="td-Name">${dataArry[i].name}</td>
+                <td class="td-border"></td>
+                <td class="td-Birthdate">${dataArry[i].Birthdate}</td>
+                <td class="td-border"></td>
+                <td class="td-Class">${dataArry[i].oClass}</td>
+                <td class="td-border"></td>
+                <td class="td-Address">${dataArry[i].Address}</td>
+                <td class="td-border"></td>
+                <td class="td-Delete-and-Edit"><button onclick="deleteData(${i})">Delete</button> <button onclick="update(${i})">Edit</button></td>
+        </tr>`
+            }
+        }
+    
+    }
+    document.getElementById("tbody").innerHTML = table;
+}

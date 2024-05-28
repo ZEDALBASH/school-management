@@ -113,7 +113,7 @@ function datePlaceholder() {
   }
 }
 
-birthdat
+
 let searchMode = "name";
 function getSearchMode(id) {
   if (id == "searchNameBtnTeachers") {
