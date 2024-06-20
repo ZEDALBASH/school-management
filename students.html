@@ -34,15 +34,17 @@
             <div class="buttons">
                 
               <div class="search-buttons">
-                <button>Search by name</button>
-                <span><input type="text" placeholder="Search" onkeyup="search(this.value)"></span>
-                <button>Search by number</button>
+                <button id="searchNameBtn" onclick="getSearchMode(this.id)">Search by name</button>
+                <span><input type="text" placeholder="Search" onkeyup="search(this.value)" id="searchInput"></span>
+                <button id="searchNumBtn" onclick="getSearchMode(this.id)">Search by number</button>
               </div>
             </div>
 
             <div class="tables">
               <table>
                 <tr>
+                  <th class="th-Pfp">PFP</th>
+                  <th class="th-border "></th>
                   <th class="th-Num">Num</th>
                   <th class="th-border"></th>
                   <th class="th-Name">Name</th>
@@ -55,13 +57,20 @@
                   <th class="th-border"></th>
                   <th class="th-Del-Edit">Delete and Edit</th>
                 </tr>
-                <tbody id="tbody"></tbody>
+                <tbody id="tbody">
+                </tbody>
               </table> 
             </div>
           </div>
           <div class="students-pfp">
-            <img src="icons/plus-icon.png" alt="">
-            <h1>Add an image</h1>
+            
+            <label for="inputFileImg">
+              <img src="icons/plus-icon.png" alt="" onmouseout="" id="showImg">
+              <h1 id="imgText">Add an image</h1>
+            </label>
+           
+            
+            <input type="file"  id="inputFileImg" accept=".png,.jpeg">
           </div> 
         </div>
       </div>

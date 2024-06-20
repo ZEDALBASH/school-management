@@ -339,11 +339,16 @@ input[type="date"]{
   height: 4.1vh;
 }
 
+.tables .th-Pfp{
+  width: 6vw;
+}
+.tables .td-Pfp img{
+  height: 6vh ;
+  width: 6vw
+}
+
 .students-pfp{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items:center;
+  
   height: 40vh;
   width: 20vw;
   border: var(--button_border);
@@ -356,4 +361,15 @@ input[type="date"]{
   height: 20%;
   cursor: pointer;
 }
-
+.students-pfp input{
+  display:none;
+}
+.students-pfp label{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  cursor: pointer;
+}
