@@ -22,13 +22,16 @@
       <div class="content-page">
         <div class="inputs-sub-alt">
           <div class="create-edit-inputs-sub-alt">
-            <input type="text" placeholder="Name">
-            <select class="selector" required>
-              <option value="" disabled selected hidden >Teacher</option>
+            <input type="text" placeholder="Name" id="inputName">
+            <select class="selector" required id="inputSelector">
+              
+
+              
+              
             </select>
           </div>
           <div class="Add-button">
-            <button>Add</button>
+            <button id="submit">Add</button>
           </div>
         </div>
         <div class="buttons">
@@ -42,20 +45,22 @@
           <table>
             <tr class="tr-th">
               <th class="th-Num">Num</th>
+              <th class="th-border"></th>
               <th class="th-Name">Name</th>
+              <th class="th-border"></th>
               <th class="th-Teacher">Teacher</th>
+              <th class="th-border"></th>
+              <th class="th-Del-Edit">Delete and Edit</th>
             </tr>
-            <tr>
-              <td class="td-Num">kan</td>
-              <td class="td-Name">kan</td>
-              <td class="td-Teacher">kan</td>
-            </tr>
+            <tbody id="tbody">
+              <td class="td-Delete-and-Edit"><button>Delete</button> <button>Edit</button></td>
+            </tbody>
           </table>
         </div>
       </div>
     </div>
       </div>
     </div>
-    <script src="main.js"></script>
+    <script src="mainSubjects.js"></script>
   </body>
 </html>

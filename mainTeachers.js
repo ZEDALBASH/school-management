@@ -7,7 +7,7 @@ var searchInput = document.getElementById("searchInputTeachers");
 var searchNumBtn = document.getElementById("searchNumBtnTeachers");
 
 var num = (function () {
-  const results = localStorage.getItem("results");
+  const results = localStorage.getItem("resultsTeachers");
 
   try {
     let parseResults = JSON.parse(results);
@@ -24,8 +24,8 @@ var num = (function () {
 var mode = "create";
 var arryIndex;
 var dataArry = [];
-if (localStorage.results != null) {
-  dataArry = JSON.parse(localStorage.results);
+if (localStorage.resultsTeachers != null) {
+  dataArry = JSON.parse(localStorage.resultsTeachers);
 } else {
   dataArry = [];
 }
@@ -49,7 +49,7 @@ submit.onclick = function createEdit(i) {
       mode = "create";
       submit.innerHTML = "Add";
     }
-    localStorage.setItem("results", JSON.stringify(dataArry));
+    localStorage.setItem("resultsTeachers", JSON.stringify(dataArry));
     console.log(result);
     clearInput();
   } else {
@@ -87,7 +87,7 @@ readData();
 
 function deleteData(i) {
   dataArry.splice(i, 1);
-  localStorage.results = JSON.stringify(dataArry);
+  localStorage.resultsTeachers = JSON.stringify(dataArry);
   readData();
 }
 

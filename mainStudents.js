@@ -10,14 +10,14 @@ var imgUrl;
 var mode = "create"
 
 var dataArry = [];
-if (localStorage.results != null){
-    dataArry = JSON.parse(localStorage.results);
+if (localStorage.resultsStudents != null){
+    dataArry = JSON.parse(localStorage.resultsStudents);
 }
 else {
     dataArry = [];
 }
 var num = (function() {
-    const results = localStorage.getItem("resluts");
+    const results = localStorage.getItem("resultsStudents");
 
     try {
     let parseResults = JSON.parse(results);
@@ -54,7 +54,7 @@ if (Name.value != "", birthdate != "", Class != "", address != ""){
         submit.innerHTML = "Add";
 
     }
-    localStorage.setItem("results", JSON.stringify(dataArry))
+    localStorage.setItem("resultsStudents", JSON.stringify(dataArry))
     clearInput();
 }
 else {
@@ -114,7 +114,7 @@ readData();
 
 function deleteData(i){
     dataArry.splice(i,1);
-    localStorage.results = JSON.stringify(dataArry);
+    localStorage.resultsStudents = JSON.stringify(dataArry);
     readData();
 }
 
