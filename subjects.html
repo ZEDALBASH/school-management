@@ -36,9 +36,9 @@
         </div>
         <div class="buttons">
           <div class="search-buttons">
-            <button>Search by number</button>
-            <input type="text" placeholder="Search">
-            <button>Search by name</button>
+            <button id="searchNumBtn" onclick="getSearchMode(this.id)">Search by number</button>
+            <input id="searchInput" onkeyup="search(this.value)" type="text" placeholder="Search">
+            <button id="searchNameBtn" onclick="getSearchMode(this.id)">Search by name</button>
           </div>
         </div>
         <div class="tables">
@@ -53,7 +53,7 @@
               <th class="th-Del-Edit">Delete and Edit</th>
             </tr>
             <tbody id="tbody">
-              <td class="td-Delete-and-Edit"><button>Delete</button> <button>Edit</button></td>
+              
             </tbody>
           </table>
         </div>

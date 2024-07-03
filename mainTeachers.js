@@ -12,7 +12,7 @@ var num = (function () {
   try {
     let parseResults = JSON.parse(results);
 
-    if ((!Array.isArray(parseResults), parseResults != null)) {
+    if (!parseResults && !Array.isArray(parseResults)) {
       throw new Error("is not array");
     }
     return Math.max(...parseResults.map((item) => item.Num));
@@ -29,7 +29,7 @@ if (localStorage.resultsTeachers != null) {
 } else {
   dataArry = [];
 }
-
+console.log(num);
 submit.onclick = function createEdit(i) {
   if ((Name.value != "", birthdate.value != "", address.value != "")) {
     let result = {
@@ -103,7 +103,7 @@ function update(i) {
     top: 0,
     behavior: "smooth",
   });
-};
+}
 
 function datePlaceholder() {
   if (birthdate.value == "") {
@@ -112,7 +112,6 @@ function datePlaceholder() {
     birthdate.style.color = "rgb(0,0,0)";
   }
 }
-
 
 let searchMode = "name";
 function getSearchMode(id) {
@@ -145,7 +144,7 @@ function search(value) {
                 <td class="td-border"></td>
                 <td class="td-Delete-and-Edit"><button onclick="deleteData(${i})">Delete</button> <button onclick="update(${i})">Edit</button></td>
         </tr>
-        `
+        `;
       }
     } else if (searchMode == "number") {
       if (dataArry[i].Num.toString().includes(value)) {
@@ -166,5 +165,4 @@ function search(value) {
     }
   }
   document.getElementById("tbody").innerHTML = table;
-  
 }
