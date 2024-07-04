@@ -8,7 +8,7 @@ var searchNumBtn = document.getElementById("searchNumBtnTeachers");
 
 var num = (function () {
   const results = localStorage.getItem("resultsTeachers");
-
+ 
   try {
     let parseResults = JSON.parse(results);
 

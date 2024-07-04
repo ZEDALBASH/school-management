@@ -17,7 +17,7 @@ if (localStorage.resultsStudents != null) {
 }
 var num = (function () {
   const results = localStorage.getItem("resultsStudents");
-
+ 
   try {
     let parseResults = JSON.parse(results);
 
