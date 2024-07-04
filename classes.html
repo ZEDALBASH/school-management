@@ -23,10 +23,11 @@
           <div class="inputs">
             <div class="create-edit-inputs-alt-class">
             
-            <input class="Name-class-alt-input" type="text" placeholder="Name">
+            <input class="Name-class-alt-input" id="NameInput" type="text" placeholder="Name">
+            
             </div>
             <div class="Add-button">
-              <button>Add</button>
+              <button id="submit">Add</button>
             </div>
           </div>
 
@@ -41,15 +42,14 @@
             <div class="tables">
               <table>
                 <tr>
-                  <th class="th-Number">Num</th>
+                  <th class="th-Num">Num</th>
+                  <th class="th-border"></th>
                   <th class="th-Name">Name</th>
-                </tr>
-
-                <tr>
-                  <td class="td-Number"></td>
-                  <td class="td-Name"></td>
+                  <th class="th-border"></th>
+                  <th class="th-Del-Edit">Delete and Edit</th>
                 </tr>
   
+                <tbody id="tbody"></tbody>
               </table>
             </div>
         </div>
@@ -58,6 +58,6 @@
 
       </div>
     </div>
-    <script src="main.js"></script>
+    <script src="mainClasses.js"></script>
   </body>
 </html>

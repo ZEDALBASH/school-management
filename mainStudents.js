@@ -1,6 +1,6 @@
 var Name = document.getElementById("Name");
 var birthdate = document.getElementById("Birthdate");
-var Class = document.getElementById("class");
+var Class = document.getElementById("inputSelector");
 var address = document.getElementById("Address");
 var submit = document.getElementById("submit");
 var searchInput = document.getElementById("searchInput");
@@ -48,7 +48,7 @@ submit.onclick = function () {
       dataArry.push(result);
     } else if (mode == "edit") {
       dataArry[arryIndex] = result;
-      mode == "create";
+      mode = "create";
       submit.innerHTML = "Add";
     }
     localStorage.setItem("resultsStudents", JSON.stringify(dataArry));
@@ -76,6 +76,19 @@ function datePlaceholder() {
     birthdate.style.color = "rgb(0,0,0)";
   }
 }
+
+function loadDataSelector() {
+  var options = `<option value="" disabled selected hidden >Teacher</option>`;
+  if (teachersOptions.length) {
+    for (let i = 0; i < teachersOptions.length; i++) {
+      options += `
+        <option >${teachersOptions[i].name}</option>
+        `;
+    }
+  }
+  Selector.innerHTML = options;
+}
+
 
 birthdate.onblur = datePlaceholder;
 birthdate.onfocus = function () {
