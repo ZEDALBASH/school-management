@@ -85,6 +85,8 @@ function readData() {
 }
 readData();
 
+
+
 function deleteData(i) {
   dataArry.splice(i, 1);
   localStorage.resultsTeachers = JSON.stringify(dataArry);

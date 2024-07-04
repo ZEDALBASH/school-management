@@ -7,7 +7,6 @@ var mode = "create";
 
 var num = (function () {
   const results = localStorage.getItem("resultsSubjects");
- 
   try {
     let parseResults = JSON.parse(results);
 
@@ -42,7 +41,6 @@ submit.onclick = function () {
 
       console.log(dataArry);
     } else if (mode == "edit") {
-      // debugger
       dataArry[arryIndex] = result;
       mode = "create";
       submit.innerHTML = "Add";
@@ -60,7 +58,6 @@ function loadDataSelector() {
   if (teachersOptions.length) {
     for (let i = 0; i < teachersOptions.length; i++) {
       options += `
-        
         <option >${teachersOptions[i].name}</option>
         `;
     }
