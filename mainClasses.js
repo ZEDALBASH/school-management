@@ -1,6 +1,6 @@
 var Name = document.getElementById("NameInput");
 var submit = document.getElementById("submit");
-
+var searchInput = document.getElementById("searchInput");
 var num = (function () {
   const results = localStorage.getItem("classesResult");
 
@@ -78,6 +78,47 @@ function readData() {
                   <td class="td-border"></td>
                   <td class="td-Delete-and-Edit"><button onclick="deleteData(${i})">Delete</button> <button onclick="update(${i})">Edit</button></td>
                 </tr>`;
+  }
+  document.getElementById("tbody").innerHTML = table;
+}
+
+var searchMode = "name";
+function getSearchMode(id){
+  if(id == "nameSearchBtn"){
+    searchMode = "name"
+  }
+  else if(id == "numSearchBtn"){
+    searchMode = "number"
+  }
+  console.log(searchMode  )
+  searchInput.placeholder = "Search by " + searchMode;
+}
+
+function search(value){
+  let table = "";
+  for(let i = 0; i < dataArry.length; i++){
+    if(searchMode == "name"){
+    if(dataArry[i].name.includes(value)){
+      table += `<tr>
+                  <td class="td-Num">${dataArry[i].Num}</td>
+                  <td class="td-border"></td>
+                  <td class="td-name">${dataArry[i].name}</td>
+                  <td class="td-border"></td>
+                  <td class="td-Delete-and-Edit"><button onclick="deleteData(${i})">Delete</button> <button onclick="update(${i})">Edit</button></td>
+                </tr>`;
+    }
+  }
+    else if(searchMode == "number"){
+    if(dataArry[i].Num.toString().includes(value)){
+      table += `<tr>
+                  <td class="td-Num">${dataArry[i].Num}</td>
+                  <td class="td-border"></td>
+                  <td class="td-name">${dataArry[i].name}</td>
+                  <td class="td-border"></td>
+                  <td class="td-Delete-and-Edit"><button onclick="deleteData(${i})">Delete</button> <button onclick="update(${i})">Edit</button></td>
+                </tr>`;
+    }
+  }
   }
   document.getElementById("tbody").innerHTML = table;
 }

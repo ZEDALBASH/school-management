@@ -33,9 +33,9 @@
 
             <div class="buttons">
                 <div class="search-button">
-                <button>Search by name</button>
-                <input type="text" placeholder="Search">
-                <button>Search by Classes</button>
+                  <button id="numSearchBtn" onclick="getSearchMode(this.id)">Search by Num</button>
+                  <input type="text" placeholder="Search" onkeyup="search(this.value)" id="searchInput">
+                  <button id="nameSearchBtn" onclick="getSearchMode(this.id)">Search by Name</button>
                 </div>
             </div>
 
