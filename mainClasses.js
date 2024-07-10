@@ -7,10 +7,12 @@ var num = (function () {
   try {
     let parseResults = JSON.parse(results);
 
-    if (!parseResults && !Array.isArray(parseResults)) {
+    if (!parseResults || !Array.isArray(parseResults) || !parseResults.length) {
       throw new Error("is not array");
     }
+    debugger;
     return Math.max(...parseResults.map((item) => item.Num));
+    debugger;
   } catch (err) {
     console.log(err);
     return 0;
@@ -30,25 +32,23 @@ submit.onclick = function () {
       Num: num,
       name: Name.value,
     };
-    if(mode == "create"){
-        result.Num += 1;
-        num++;
-        dataArry.push(result);
+    if (mode == "create") {
+      result.Num += 1;
+      num++;
+      dataArry.push(result);
+    } else if (mode == "edit") {
+      delete result.Num;
+      dataArry[arryIndex] = { ...dataArry[arryIndex], ...result };
+      mode = "create";
+      submit.innerHTML = "Add";
     }
-    else if(mode == "edit"){
-        dataArry[arryIndex] = result;
-        mode = "create";
-    submit.innerHTML = "Add";
-    }
-    
+
     localStorage.setItem("classesResult", JSON.stringify(dataArry));
-    
-  }
-  else{
-    alert("Filed must not be empty!")
+  } else {
+    alert("Filed must not be empty!");
   }
   readData();
-    clearInput();
+  clearInput();
 };
 console.log(dataArry);
 
@@ -83,42 +83,40 @@ function readData() {
 }
 
 var searchMode = "name";
-function getSearchMode(id){
-  if(id == "nameSearchBtn"){
-    searchMode = "name"
+function getSearchMode(id) {
+  if (id == "nameSearchBtn") {
+    searchMode = "name";
+  } else if (id == "numSearchBtn") {
+    searchMode = "number";
   }
-  else if(id == "numSearchBtn"){
-    searchMode = "number"
-  }
-  console.log(searchMode  )
+  console.log(searchMode);
   searchInput.placeholder = "Search by " + searchMode;
 }
 
-function search(value){
+function search(value) {
   let table = "";
-  for(let i = 0; i < dataArry.length; i++){
-    if(searchMode == "name"){
-    if(dataArry[i].name.includes(value)){
-      table += `<tr>
+  for (let i = 0; i < dataArry.length; i++) {
+    if (searchMode == "name") {
+      if (dataArry[i].name.includes(value)) {
+        table += `<tr>
                   <td class="td-Num">${dataArry[i].Num}</td>
                   <td class="td-border"></td>
                   <td class="td-name">${dataArry[i].name}</td>
                   <td class="td-border"></td>
                   <td class="td-Delete-and-Edit"><button onclick="deleteData(${i})">Delete</button> <button onclick="update(${i})">Edit</button></td>
                 </tr>`;
-    }
-  }
-    else if(searchMode == "number"){
-    if(dataArry[i].Num.toString().includes(value)){
-      table += `<tr>
+      }
+    } else if (searchMode == "number") {
+      if (dataArry[i].Num.toString().includes(value)) {
+        table += `<tr>
                   <td class="td-Num">${dataArry[i].Num}</td>
                   <td class="td-border"></td>
                   <td class="td-name">${dataArry[i].name}</td>
                   <td class="td-border"></td>
                   <td class="td-Delete-and-Edit"><button onclick="deleteData(${i})">Delete</button> <button onclick="update(${i})">Edit</button></td>
                 </tr>`;
+      }
     }
-  }
   }
   document.getElementById("tbody").innerHTML = table;
 }

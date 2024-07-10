@@ -12,7 +12,7 @@ var num = (function () {
   try {
     let parseResults = JSON.parse(results);
 
-    if (!parseResults && !Array.isArray(parseResults)) {
+    if (!parseResults || !Array.isArray(parseResults) || !parseResults.length) {
       throw new Error("is not array");
     }
     return Math.max(...parseResults.map((item) => item.Num));
@@ -45,7 +45,8 @@ submit.onclick = function createEdit(i) {
       console.log(result);
       dataArry.push(result);
     } else if (mode == "edit") {
-      dataArry[arryIndex] = result;
+      delete result.Num;
+      dataArry[arryIndex] = {...dataArry[arryIndex],...result}
       mode = "create";
       submit.innerHTML = "Add";
     }

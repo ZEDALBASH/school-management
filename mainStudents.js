@@ -1,11 +1,19 @@
 var Name = document.getElementById("Name");
 var birthdate = document.getElementById("Birthdate");
-var Class = document.getElementById("inputSelector");
+var selector = document.getElementById("inputSelector");
 var address = document.getElementById("Address");
 var submit = document.getElementById("submit");
 var searchInput = document.getElementById("searchInput");
 
-var imgUrl;
+
+
+
+const classOption = JSON.parse(localStorage.getItem("classesResult"));
+
+console.log(classOption)
+
+loadDataSelector();
+var imgUrl = "";
 
 var mode = "create";
 
@@ -21,7 +29,7 @@ var num = (function () {
   try {
     let parseResults = JSON.parse(results);
 
-    if (!parseResults && !Array.isArray(parseResults)) {
+    if (!parseResults || !Array.isArray(parseResults) || !parseResults.length) {
       throw new Error("is not array");
     }
     return Math.max(...parseResults.map((item) => item.Num));
@@ -31,14 +39,16 @@ var num = (function () {
   }
 })();
 var arryIndex;
+
 console.log(num);
 submit.onclick = function () {
-  if ((Name.value != "", birthdate != "", Class != "", address != "")) {
+  
+  if ((Name.value != "", birthdate != "", selector != "", address != "", imgUrl != "")) {
     let result = {
       Num: num,
       name: Name.value,
       Birthdate: birthdate.value,
-      oClass: Class.value,
+      Selector: selector.value,
       Address: address.value,
       Img: imgUrl,
     };
@@ -47,21 +57,22 @@ submit.onclick = function () {
       num++;
       dataArry.push(result);
     } else if (mode == "edit") {
-      dataArry[arryIndex] = result;
+      delete result.Num;
+      dataArry[arryIndex] = {...dataArry[arryIndex], ...result};
       mode = "create";
       submit.innerHTML = "Add";
     }
     localStorage.setItem("resultsStudents", JSON.stringify(dataArry));
     clearInput();
   } else {
-    alert("Filed must not be empty!");
+    alert("Filed or the profile picture must not be empty!");
   }
   readData();
 };
 function clearInput() {
   Name.value = "";
   birthdate.value = "";
-  Class.value = "";
+  selector.value = "";
   Address.value = "";
   showImg.src = "icons/plus-icon.png";
   showImg.style.width = "20%";
@@ -78,15 +89,16 @@ function datePlaceholder() {
 }
 
 function loadDataSelector() {
-  var options = `<option value="" disabled selected hidden >Teacher</option>`;
-  if (teachersOptions.length) {
-    for (let i = 0; i < teachersOptions.length; i++) {
+  var options = `<option value="" disabled selected hidden >Class</option>`;
+  if (classOption.length) {
+    for (let i = 0; i < classOption.length; i++) {
       options += `
-        <option >${teachersOptions[i].name}</option>
+        <option>${classOption[i].name}</option>
         `;
     }
   }
-  Selector.innerHTML = options;
+  
+  selector.innerHTML = options;
 }
 
 
@@ -108,7 +120,7 @@ function readData() {
                 <td class="td-border"></td>
                 <td class="td-Birthdate">${dataArry[i].Birthdate}</td>
                 <td class="td-border"></td>
-                <td class="td-Class">${dataArry[i].oClass}</td>
+                <td class="td-Class">${dataArry[i].Selector}</td>
                 <td class="td-border"></td>
                 <td class="td-Address">${dataArry[i].Address}</td>
                 <td class="td-border"></td>
@@ -131,7 +143,7 @@ function update(i) {
   mode = "edit";
   Name.value = dataArry[i].name;
   birthdate.value = dataArry[i].Birthdate;
-  Class.value = dataArry[i].oClass;
+  selector.value = dataArry[i].Selector;
   address.value = dataArry[i].Address;
   showImg.src = dataArry[i].Img;
   imgUrl = dataArry[i].Img;
@@ -171,7 +183,7 @@ function search(value) {
                 <td class="td-border"></td>
                 <td class="td-Birthdate">${dataArry[i].Birthdate}</td>
                 <td class="td-border"></td>
-                <td class="td-Class">${dataArry[i].oClass}</td>
+                <td class="td-Class">${dataArry[i].Selector}</td>
                 <td class="td-border"></td>
                 <td class="td-Address">${dataArry[i].Address}</td>
                 <td class="td-border"></td>
@@ -189,7 +201,7 @@ function search(value) {
                 <td class="td-border"></td>
                 <td class="td-Birthdate">${dataArry[i].Birthdate}</td>
                 <td class="td-border"></td>
-                <td class="td-Class">${dataArry[i].oClass}</td>
+                <td class="td-Class">${dataArry[i].Selector}</td>
                 <td class="td-border"></td>
                 <td class="td-Address">${dataArry[i].Address}</td>
                 <td class="td-border"></td>

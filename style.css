@@ -151,7 +151,7 @@ select{
   border-radius: var(--border_raidus);
   background-color:white;
   outline: none;
-  width: 12.4vw;
+  width: 11.4vw;
   height: 5.5vh;
   transition: var(--transition_speed);
 }
@@ -171,7 +171,7 @@ select option{
   
 }
  select:focus{
-  width: 13vw;
+  width: 11.7vw;
   height: 5.6vh;
   border: none;
   background-color: rgb(224, 224, 224);
