@@ -341,10 +341,16 @@ input[type="date"]{
 
 .tables .th-Pfp{
   width: 6vw;
+  
+}
+.tables .td-pfp{
+  padding-top: 4vh ;
 }
 .tables .td-Pfp img{
-  height: 6vh ;
-  width: 6vw
+  height: 8vh ;
+  width: 4vw;
+  padding-top: 0.5vh;
+  
 }
 
 .students-pfp{

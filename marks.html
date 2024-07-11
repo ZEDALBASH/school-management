@@ -23,25 +23,25 @@
                 <div class="content-page">
                     <div class="inputs">
                         <div class="create-edit-inputs">
-                        <input type="text" placeholder="Mark">
-                        <select required>
-                            <option value="" selected hidden disabled>Student</option>
+                        <input type="number" max="100" min="0" placeholder="Mark" id="inputName">
+                        <select required id="selectorStudents">
+                            
                             
                         </select>
-                        <select required>
-                            <option value="" hidden selected disabled>Subject</option>
+                        <select required id="selectorSubject">
+                            
                         </select>
                         </div>
                         <div class="Add-button">
-                            <button>Add</button>
+                            <button id="submit">Add</button>
                         </div>
                     </div>
 
                     <div class="buttons">
                         <div class="search-buttons">
-                            <button>Search by Number</button>
-                            <input type="text" placeholder="Search">
-                            <button>Search by Name</button>
+                            <button id="searchNumBtn" onclick="getSearchMode(this.id)">Search by Number</button>
+                            <input type="text" onkeyup="search(this.value)" placeholder="Search" id="searchInput" >
+                            <button id="searchNameBtn" onclick="getSearchMode(this.id)">Search by Name</button>
                         </div>
                     </div>
 
@@ -49,17 +49,19 @@
                         <table>
                             <tr>
                                 <th class="th-Num">Num</th>
+                                <th class="th-border"></th>
                                 <th class="th-Student">Student</th>
+                                <th class="th-border"></th>
                                 <th class="th-Mark">Mark</th>
+                                <th class="th-border"></th>
                                 <th class="th-Subject">subject</th>
+                                <th class="th-border"></th>
+                                <th class="th-Status">Status</th>
+                                <th class="th-border"></th>
+                                <th class="th-Del-Edit">Delete and Edit</th>
                             </tr>
-                            <tr>
-                                <td class="td-Num"></td>
-                                <td class="td-Student"></td>
-                                <td class="td-Mark"></td>
-                                <td class="td-subject"></td>
-                                
-                            </tr>
+                            
+                            <tbody id="tbody"></tbody>
                         </table>
                     </div>
                 </div>
@@ -67,5 +69,6 @@
 
 
         </div>
+        <script src="mainMarks.js"></script>
     </body>
 </html>

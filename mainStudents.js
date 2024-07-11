@@ -90,7 +90,7 @@ function datePlaceholder() {
 
 function loadDataSelector() {
   var options = `<option value="" disabled selected hidden >Class</option>`;
-  if (classOption.length) {
+  if (classOption) {
     for (let i = 0; i < classOption.length; i++) {
       options += `
         <option>${classOption[i].name}</option>
@@ -172,7 +172,7 @@ function search(value) {
   let table = "";
   for (let i = 0; i < dataArry.length; i++) {
     if (searchMode == "name") {
-      if (dataArry[i].name.includes(value)) {
+      if (dataArry[i].name.toLowerCase().includes(value.toLowerCase())) {
         table += `<tr>
                 <td class="td-Pfp"><img src="${
                   dataArry[i].Img

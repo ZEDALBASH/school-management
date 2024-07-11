@@ -134,7 +134,7 @@ function search(value) {
 
   for (let i = 0; i < dataArry.length; i++) {
     if (searchMode == "name") {
-      if (dataArry[i].name.includes(value)) {
+      if (dataArry[i].name.toLowerCase().includes(value.toLowerCase)) {
         table += `
         <tr>
                 <td class="td-Num">${dataArry[i].Num}</td>

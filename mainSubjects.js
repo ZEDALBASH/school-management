@@ -41,8 +41,8 @@ submit.onclick = function () {
 
       console.log(dataArry);
     } else if (mode == "edit") {
-      delete result.Num
-      dataArry[arryIndex] = {...dataArry[arryIndex],...result};
+      delete result.Num;
+      dataArry[arryIndex] = { ...dataArry[arryIndex], ...result };
       mode = "create";
       submit.innerHTML = "Add";
     }
@@ -56,7 +56,7 @@ submit.onclick = function () {
 
 function loadDataSelector() {
   var options = `<option value="" disabled selected hidden >Teacher</option>`;
-  if (teachersOptions.length) {
+  if (teachersOptions) {
     for (let i = 0; i < teachersOptions.length; i++) {
       options += `
         <option >${teachersOptions[i].name}</option>
@@ -78,7 +78,7 @@ function readData() {
               <tr class="tr-td">
               <td class="td-Num">${dataArry[i].Num}</td>
               <td class="td-border"></td>
-              <td class="td-Name">${dataArry[i].name} </td>
+              <td class="td-Name" >${dataArry[i].name} </td>
               <td class="td-border"></td>
               <td class="td-Teacher">${dataArry[i].selector}</td>
               <td class="td-border"></td>
@@ -106,22 +106,21 @@ function update(i) {
 
 var searchInput = document.getElementById("searchInput");
 var searchMode = "name";
-function getSearchMode(id){
-  if(id == "searchNameBtn"){
-    searchMode = "name"
-  }
-  else if(id == "searchNumBtn"){
+function getSearchMode(id) {
+  if (id == "searchNameBtn") {
+    searchMode = "name";
+  } else if (id == "searchNumBtn") {
     searchMode = "number";
   }
 
   searchInput.placeholder = "Search by " + searchMode;
 }
 
- function search(value){
+function search(value) {
   let table = "";
-  for(let i = 0; i < dataArry.length; i++){
-    if(searchMode == "name"){
-      if(dataArry[i].name.includes(value)){
+  for (let i = 0; i < dataArry.length; i++) {
+    if (searchMode == "name") {
+      if (dataArry[i].name.tolowerCase().includes(value.toLowerCase())) {
         table += `
               <tr class="tr-td">
               <td class="td-Num">${dataArry[i].Num}</td>
@@ -134,9 +133,8 @@ function getSearchMode(id){
               </tr>
         `;
       }
-    }
-      else if(searchMode == "number"){
-      if(dataArry[i].Num.toString().includes(value)){
+    } else if (searchMode == "number") {
+      if (dataArry[i].Num.toString().includes(value)) {
         table += `
               <tr class="tr-td">
               <td class="td-Num">${dataArry[i].Num}</td>
@@ -146,12 +144,9 @@ function getSearchMode(id){
               <td class="td-Teacher">${dataArry[i].selector}</td>
               <td class="td-border"></td>
               <td class="td-Delete-and-Edit"><button onclick="deleteData(${i})">Delete</button> <button onclick="update(${i})">Edit</button></td>
-              </tr>`
-        }
+              </tr>`;
       }
+    }
   }
-  document.getElementById("tbody").innerHTML  = table;
-
-
+  document.getElementById("tbody").innerHTML = table;
 }
- 
