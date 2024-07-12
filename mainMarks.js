@@ -33,8 +33,9 @@ submit.onclick = function () {
       result.Num += 1;
       num++;
       dataArry.push(result);
-    } else if (mode == "edit") {
-      dataArry[arryIndex] = result;
+    } else if (mode == "edit") { 
+      delete result.Num;
+      dataArry[arryIndex] = {...dataArry[arryIndex], ...result};
       mode == "create";
       submit.innerHTML == "create";
     }

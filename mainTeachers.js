@@ -44,6 +44,7 @@ submit.onclick = function createEdit(i) {
   }
 
   readData();
+  datePlaceholder();
 };
 function clearInput() {
   Name.value = "";
