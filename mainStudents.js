@@ -23,21 +23,7 @@ if (localStorage.resultsStudents != null) {
 } else {
   dataArry = [];
 }
-var num = (function () {
-  const results = localStorage.getItem("resultsStudents");
- 
-  try {
-    let parseResults = JSON.parse(results);
-
-    if (!parseResults || !Array.isArray(parseResults) || !parseResults.length) {
-      throw new Error("is not array");
-    }
-    return Math.max(...parseResults.map((item) => item.Num));
-  } catch (err) {
-    console.log(err);
-    return 0;
-  }
-})();
+var num = numCounter(localStorage.getItem("resultsStudents"));
 var arryIndex;
 
 console.log(num);

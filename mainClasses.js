@@ -1,23 +1,8 @@
 var Name = document.getElementById("NameInput");
 var submit = document.getElementById("submit");
 var searchInput = document.getElementById("searchInput");
-var num = (function () {
-  const results = localStorage.getItem("classesResult");
 
-  try {
-    let parseResults = JSON.parse(results);
-
-    if (!parseResults || !Array.isArray(parseResults) || !parseResults.length) {
-      throw new Error("is not array");
-    }
-    debugger;
-    return Math.max(...parseResults.map((item) => item.Num));
-    debugger;
-  } catch (err) {
-    console.log(err);
-    return 0;
-  }
-})();
+var num = numCounter(localStorage.getItem("classesResult"))
 
 var dataArry = [];
 if (localStorage.classesResult != null) {

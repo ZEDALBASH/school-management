@@ -6,21 +6,7 @@ var searchNameBtn = document.getElementById("searchNameBtnTeachers");
 var searchInput = document.getElementById("searchInputTeachers");
 var searchNumBtn = document.getElementById("searchNumBtnTeachers");
 
-var num = (function () {
-  const results = localStorage.getItem("resultsTeachers");
- 
-  try {
-    let parseResults = JSON.parse(results);
-
-    if (!parseResults || !Array.isArray(parseResults) || !parseResults.length) {
-      throw new Error("is not array");
-    }
-    return Math.max(...parseResults.map((item) => item.Num));
-  } catch (err) {
-    console.log(err);
-    return 0;
-  }
-})();
+var num = numCounter(localStorage.getItem("resultsTeachers"));
 var mode = "create";
 var arryIndex;
 var dataArry = [];
