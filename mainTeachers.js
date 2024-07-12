@@ -94,6 +94,7 @@ function update(i) {
   });
 }
 
+
 function datePlaceholder() {
   if (birthdate.value == "") {
     birthdate.style.color = "rgba(0,0,0,0.5)";
@@ -102,6 +103,12 @@ function datePlaceholder() {
   }
 }
 
+
+birthdate.onblur = datePlaceholder;
+birthdate.onfocus = function () {
+  birthdate.style.color = "rgb(0,0,0)";
+};
+ 
 let searchMode = "name";
 function getSearchMode(id) {
   if (id == "searchNameBtnTeachers") {

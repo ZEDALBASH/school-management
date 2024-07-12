@@ -1,7 +1,0 @@
-.side-bar-buttons .text h1{
-    background-color: rgb(94, 124, 255) ;
-    border-radius: 3px;
-    width: 6vw;
-    height: 3vh;
-    font-size: 13px;
-}
